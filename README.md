@@ -6,7 +6,7 @@
 
 1. What is the first step for installing Dart on a Windows machine?
 
-A) Install Homebrew
+A) Install Homebrew<br> 
 <h style ="color: green">B) Download the Dart SDK</h>
 C) Update your PATH
 D) Run Dart Doctor
