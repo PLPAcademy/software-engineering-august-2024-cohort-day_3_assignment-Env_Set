@@ -1,0 +1,224 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Question 1
+      id: question-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 1
+        setup-command: ''
+        command: 'What is the first step for installing Dart on a Windows machine? '
+        input: "A) Install Homebrew \nB) Download the Dart SDK \nC) Update your PATH
+          \nD) Run Dart Doctor"
+        expected-output: 'C) Update your PATH '
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Question 2
+      id: question-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 2
+        setup-command: ''
+        command: 'Which command verifies the Dart installation on macOS? '
+        input: "A) dart --install \nB) dart --check \nC) dart --verify \nD) dart --version"
+        expected-output: D) dart --version
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Question 3
+      id: question-3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 3
+        setup-command: ''
+        command: 'What is the next step after downloading and extracting the Flutter
+          SDK on Linux? '
+        input: "A) Install Homebrew \nB) Update your PATH \nC) Run Flutter Doctor
+          \nD) Create a new Flutter project"
+        expected-output: 'B) Update your PATH '
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Question 4
+      id: question-4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 4
+        setup-command: ''
+        command: 'What command is used to run a newly created Flutter app? '
+        input: "A) flutter start \nB) flutter build \nC) flutter run \nD) flutter
+          init"
+        expected-output: 'C) flutter run '
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Question 5
+      id: question-5
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 5
+        setup-command: ''
+        command: 'What is the first step to install Python on a Windows system?  '
+        input: "A) Run the installer without any customization \nB) Download Python
+          from the official website \nC) Open the terminal and type sudo apt install
+          python \nD) Install pip manually"
+        expected-output: 'B) Download Python from the official website '
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Question 6
+      id: question-6
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 6
+        setup-command: ''
+        command: 'Which option should you ensure is checked during Python installation
+          on Windows? '
+        input: " A) Install with default settings \nB) Install to a custom directory
+          \nC) Add Python to PATH \nD) Install all available features"
+        expected-output: 'C) Add Python to PATH '
+        comparison-method: exact
+        timeout: 10
+        max-score: 6
+    - name: Question 7
+      id: question-7
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 7
+        setup-command: ''
+        command: 'How do you verify Python installation on any system?  '
+        input: "A) By running python --version \nB) By restarting your computer \nC)
+          By opening the Python installer again \nD) By checking the Programs and
+          Features in Control Panel"
+        expected-output: 'A) By running python --version '
+        comparison-method: contains
+        timeout: 10
+        max-score: 6
+    - name: Question 8
+      id: question-8
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 8
+        setup-command: ''
+        command: 'What command is used to install pip on macOS and Linux? '
+        input: " A) sudo install pip \nB) pip install python \nC) curl https://bootstrap.pypa.io/get-pip.py
+          -o get-pip.py \nD) python --install pip"
+        expected-output: 'C) curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py '
+        comparison-method: contains
+        timeout: 10
+        max-score: 6
+    - name: Question 9
+      id: question-9
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 9
+        setup-command: ''
+        command: 'What is the purpose of a virtual environment in Python? '
+        input: "A) To keep your projects organized in one folder \nB) To install Python
+          in a different directory \nC) To separate project dependencies and avoid
+          conflicts \nD) To enhance Python performance on your system"
+        expected-output: 'C) To separate project dependencies and avoid conflicts '
+        comparison-method: contains
+        timeout: 10
+        max-score: 6
+    - name: Question 10
+      id: question-10
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 10
+        setup-command: ''
+        command: 'What is the first step to install MySQL on Windows? '
+        input: "A) Download MySQL Shell \nB) Download MySQL Installer from the official
+          website \nC) Install MySQL Workbench \nD) Set up a root password"
+        expected-output: 'B) Download MySQL Installer from the official website '
+        comparison-method: contains
+        timeout: 10
+        max-score: 6
+    - name: Question 11
+      id: question-11
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 11
+        setup-command: ''
+        command: 'What setup type should you choose for a custom MySQL installation?  '
+        input: "A) Developer Default \nB) Server Only \nC) Full \nD) Custom"
+        expected-output: D) Custom
+        comparison-method: contains
+        timeout: 10
+        max-score: 6
+    - name: Question 12
+      id: question-12
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 12
+        setup-command: ''
+        command: 'Which products should you select during the MySQL installation? '
+        input: "A) MySQL Server, MySQL Workbench, and MySQL Shell \nB) Only MySQL
+          Server \nC) MySQL Server and MySQL Router \nD) MySQL Workbench and MySQL
+          Utilities"
+        expected-output: "A) MySQL Server, MySQL Workbench, and MySQL Shell \n"
+        comparison-method: contains
+        timeout: 10
+        max-score: 6
+    - name: Question 13
+      id: question-13
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 13
+        setup-command: ''
+        command: 'What is the purpose of setting a root password during MySQL installation? '
+        input: " A) To create a user account for your MySQL server \nB) To secure
+          your MySQL installation with a super-secret password \nC) To activate MySQL
+          Workbench \nD) To allow multiple users to access MySQL"
+        expected-output: 'B) To secure your MySQL installation with a super-secret
+          password '
+        comparison-method: contains
+        timeout: 10
+        max-score: 6
+    - name: Question 14
+      id: question-14
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Question 14
+        setup-command: ''
+        command: 'How do you begin managing your database after installing MySQL?  '
+        input: "A) Start by installing additional plugins \nB) Launch MySQL Workbench
+          and connect to your MySQL Server \nC) Run mysqladmin start in the terminal
+          \nD) Restart your computer to activate MySQL"
+        expected-output: "B) Launch MySQL Workbench and connect to your MySQL Server
+          \n"
+        comparison-method: contains
+        timeout: 10
+        max-score: 6
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        QUESTION-1_RESULTS: "${{steps.question-1.outputs.result}}"
+        QUESTION-2_RESULTS: "${{steps.question-2.outputs.result}}"
+        QUESTION-3_RESULTS: "${{steps.question-3.outputs.result}}"
+        QUESTION-4_RESULTS: "${{steps.question-4.outputs.result}}"
+        QUESTION-5_RESULTS: "${{steps.question-5.outputs.result}}"
+        QUESTION-6_RESULTS: "${{steps.question-6.outputs.result}}"
+        QUESTION-7_RESULTS: "${{steps.question-7.outputs.result}}"
+        QUESTION-8_RESULTS: "${{steps.question-8.outputs.result}}"
+        QUESTION-9_RESULTS: "${{steps.question-9.outputs.result}}"
+        QUESTION-10_RESULTS: "${{steps.question-10.outputs.result}}"
+        QUESTION-11_RESULTS: "${{steps.question-11.outputs.result}}"
+        QUESTION-12_RESULTS: "${{steps.question-12.outputs.result}}"
+        QUESTION-13_RESULTS: "${{steps.question-13.outputs.result}}"
+        QUESTION-14_RESULTS: "${{steps.question-14.outputs.result}}"
+      with:
+        runners: question-1,question-2,question-3,question-4,question-5,question-6,question-7,question-8,question-9,question-10,question-11,question-12,question-13,question-14
