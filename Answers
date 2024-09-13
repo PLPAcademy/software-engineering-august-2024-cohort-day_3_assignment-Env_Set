@@ -1,0 +1,47 @@
+#Dart & Flutter
+
+1. ## What is the first step for installing Dart on a Windows machine?##
+>> (B) Download the Dart SDK
+
+2. ## Which command verifies the Dart installation on macOS?
+>> (D) dart --version
+
+3. ## What is the next step after downloading and extracting the Flutter SDK on Linux?
+>> (B) Update your PATH
+
+4. ## What command is used to run a newly created Flutter app?
+>> (C) flutter run
+
+{#Python Installation}
+
+
+1. ## What is the first step to install Python on a Windows system?
+>> (B) Download Python from the official website.
+
+2. ## Which option should you ensure is checked during Python installation on Windows?
+>> (C) Add Python to PATH
+
+1
+3. ## Verifying Python installation: 
+>> (A) By running python --version
+
+4. ## Installing pip on macOS and Linux:
+>> (C) curl (link unavailable) -o (link unavailable) (then run python (link unavailable))
+
+5. ## Purpose of a virtual environment in Python:
+>> (C) To separate project dependencies and avoid conflicts
+
+6. ## First step to install MySQL on Windows:
+>> (B) Download MySQL Installer from the official website
+
+7. ## Setup type for custom MySQL installation:
+>> (D) Custom
+
+8. ## Products to select during MySQL installation:
+>> (A) MySQL Server, MySQL Workbench, and MySQL Shell
+
+9. ## Purpose of setting a root password during MySQL installation:
+>> (B) To secure your MySQL installation with a super-secret password
+
+10. ## Beginning database management after installing MySQL:
+>> (B) Launch MySQL Workbench and connect to your MySQL Server
